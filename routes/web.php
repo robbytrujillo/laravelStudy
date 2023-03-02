@@ -49,3 +49,34 @@ Route::get('/product', function() {
 Route::get('/product/{id}', function(string $id) { 
     return view('product.detail', ['id' => $id]);
 });
+
+// prefix route
+// Halaman Profile Admin
+Route::get('admin/profile-admin', function() {
+    return 'Profile Admin';
+});
+
+// Halaman About Admin
+Route::get('admin/about-admin', function() {
+    return 'About Admin';
+});
+
+// Halaman Contact Admin
+Route::get('admin/contact-admin', function() {
+    return 'Contact Admin';
+});
+
+// Halaman Profile Admin2
+Route::get('admin/profile-admin2', function() {
+    return 'Profile Admin 2';
+});
+
+// Halaman About Admin
+Route::get('admin/about-admin2', function() {
+    return 'About Admin 2';
+});
+
+// Halaman Contact Admin
+Route::get('admin/contact-admin2', function() {
+    return 'Contact Admin 2';
+});
