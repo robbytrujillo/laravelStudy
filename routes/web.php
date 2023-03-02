@@ -13,74 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome'); // view route
+// });
+
 Route::get('/', function () {
-    return view('welcome'); // view route
-});
-
-Route::get('/about', function () {
-    //return 'what ever';
-    
-    // basic Route
-    return 9*9;
-});
-
-// Route::get('/contact', function() {
-//     return view('contact');
-// });
-
-// code sederhana
-Route::view('/contact', 'contact');
-
-
-Route::view('/contact', 'contact', ['name' => 'I am Robby', 'address' => 'I live in Bogor', 'phone' => '081311111111', ]);
-
-Route::redirect('/contact', '/contact-us'); // mengganti sementara dari halaman contact ke contact-us
-
-Route::get('/product', function() {
-    return 'product';
-});
-
-// route dengan parameter
-// Route::get('/product/{id}', function(string $id) { 
-//     return 'Ini adalah product dengan id '.$id;
-// });
-
-// route dengan parameter & view routes
-Route::get('/product/{id}', function(string $id) { 
-    return view('product.detail', ['id' => $id]);
+    return view('home', [
+        'name' => 'Robby',
+        'role' => 'Admin'
+]); // view route
 });
 
 
-// Prefix Route
-Route::prefix('administrator')->group(function () {
-
-    // Halaman Profile Admin
-Route::get('/profile-admin', function() {
-    return 'Profile Admin';
-});
-
-// Halaman About Admin
-Route::get('/about-admin', function() {
-    return 'About Admin';
-});
-
-// Halaman Contact Admin
-Route::get('/contact-admin', function() {
-    return 'Contact Admin';
-});
-
-// Halaman Profile Admin2
-Route::get('/profile-admin2', function() {
-    return 'Profile Admin 2';
-});
-
-// Halaman About Admin
-Route::get('/about-admin2', function() {
-    return 'About Admin 2';
-});
-
-// Halaman Contact Admin
-Route::get('/contact-admin2', function() {
-    return 'Contact Admin 2';
-});
-});
+?>
