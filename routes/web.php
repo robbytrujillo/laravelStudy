@@ -35,3 +35,17 @@ Route::view('/contact', 'contact');
 Route::view('/contact', 'contact', ['name' => 'I am Robby', 'address' => 'I live in Bogor', 'phone' => '081311111111', ]);
 
 Route::redirect('/contact', '/contact-us'); // mengganti sementara dari halaman contact ke contact-us
+
+Route::get('/product', function() {
+    return 'product';
+});
+
+// route dengan parameter
+// Route::get('/product/{id}', function(string $id) { 
+//     return 'Ini adalah product dengan id '.$id;
+// });
+
+// route dengan parameter & view routes
+Route::get('/product/{id}', function(string $id) { 
+    return view('product.detail', ['id' => $id]);
+});
