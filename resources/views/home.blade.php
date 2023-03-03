@@ -43,6 +43,14 @@
     <h2> Anda sebagai <span style="color: blue">{{ $role }}</span>!.</span></h2>
 
     <button class="btn btn-primary">Submit</button>
+
+    @if ($role == 'admin')
+      <a href="">Ke Halaman admin</a>
+    @elseif ($role == 'staf')
+      <a href="">Ke halaman gudang</a>
+      @else
+      <a href="">Ke Halaman lain</a>
+    @endif
     </div>
 
     {{-- JS Bundle --}}

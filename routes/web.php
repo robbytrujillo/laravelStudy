@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home', [
         'name' => 'Robby',
-        'role' => 'Admin'
+        'role' => 'manajemen'
 ]); // view route
 });
 
