@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +26,10 @@ Route::get('/', function () {
 ]); // view route
 });
 
-Route::get('/about', function() {
-    return view('about');
-})
+Route::get('/students', [StudentController::class, 'index']);
+//  function() {
+//     // return view('about');
+// })
 
 
 ?>
